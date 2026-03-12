@@ -23,10 +23,10 @@ test.describe('Escenarios de Autenticación en Demoblaze', () => {
 
         await homePage.signUp(dynamicUsername, password);
 
-        // TRUCO 1: Damos 2 segundos para que la base de datos lenta guarde el usuario
+        
         await page.waitForTimeout(2000);
         
-        // TRUCO 2: Recargamos la página para limpiar cualquier ventana modal abierta
+        
         await page.reload();
 
         await homePage.login(dynamicUsername, password);
@@ -37,7 +37,7 @@ test.describe('Escenarios de Autenticación en Demoblaze', () => {
     test('Debe iniciar sesión exitosamente con un usuario válido', async ({ page }) => {
         await homePage.login(dynamicUsername, password);
         
-        // Damos un pequeño respiro extra a la UI
+        
         await page.waitForTimeout(1000);
 
         const welcomeText = await homePage.getWelcomeMessage();

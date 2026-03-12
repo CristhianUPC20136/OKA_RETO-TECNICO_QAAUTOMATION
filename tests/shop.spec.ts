@@ -20,7 +20,7 @@ test.describe('Escenarios de Compra en Demoblaze', () => {
 
     test('Flujo E2E: Añadir productos de varias categorías, eliminar uno y comprar', async ({ page }) => {
         
-        // --- ESCENARIO 3: Añadir productos de diferentes categorías ---
+        // ESCENARIO 3: Añadir productos de diferentes categorías 
         
         // 1. Categoría Phones: Samsung galaxy s6
         await homePage.selectCategory('Phones');
@@ -42,7 +42,7 @@ test.describe('Escenarios de Compra en Demoblaze', () => {
         await homePage.selectProduct('Apple monitor 24');
         await productPage.addToCart();
 
-        // --- ESCENARIO 4: Eliminar productos ---
+        // ESCENARIO 4: Eliminar productos
         
         // Vamos al carrito de compras
         await cartPage.goToCart();
@@ -50,12 +50,12 @@ test.describe('Escenarios de Compra en Demoblaze', () => {
         // Nos arrepentimos de la laptop, la eliminamos por su nombre exacto
         await cartPage.deleteProduct('Sony vaio i5');
 
-        // VALIDACIÓN DE CALIDAD: Verificamos que el producto ya no esté en la tabla
+        // VALIDACIÓN: Verificamos que el producto ya no esté en la tabla
         // Usamos .isHidden() para asegurar que la fila desapareció del DOM
         const laptopRow = page.locator('tr:has-text("Sony vaio i5")');
         await expect(laptopRow).toBeHidden();
 
-        // --- ESCENARIO 5: Finalizar compra del carrito ---
+        // ESCENARIO 5: Finalizar compra del carrito 
         
         // Hacemos clic en Place Order y llenamos el formulario con los datos de nuestro JSON
         const order = testData.orderData;

@@ -47,7 +47,7 @@ export class HomePage {
         return await welcomeLocator.textContent();
     }
 
-    // --- MÉTODOS PARA LAS CATEGORÍAS (Los que faltaban) ---
+    // --- MÉTODOS PARA LAS CATEGORÍAS ---
 
     async selectCategory(categoryName: string) {
         await this.page.getByRole('link', { name: categoryName, exact: true }).click();
