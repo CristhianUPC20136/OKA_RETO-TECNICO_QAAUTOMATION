@@ -29,3 +29,9 @@ Para garantizar un framework escalable, mantenible y robusto, se tomaron las sig
 
 3. Instalar los navegadores de Playwright:
    npx playwright install
+
+### Bonus: Pruebas de API (PetStore)
+Se ha implementado la Opción B del reto dentro del mismo framework para demostrar escalabilidad.
+Para ejecutar los escenarios de la API de PetStore de forma aislada:
+```bash
+npx playwright test tests/api.spec.ts --project=chromium
