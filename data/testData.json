@@ -1,0 +1,15 @@
+{
+  "baseUrl": "https://www.demoblaze.com/index.html",
+  "user": {
+    "username": "testUserQA_2026", 
+    "password": "Password123!"
+  },
+  "orderData": {
+    "name": "QA Tester Cristhian",
+    "country": "Peru",
+    "city": "Lima",
+    "card": "1234567890123456",
+    "month": "12",
+    "year": "2026"
+  }
+}
